@@ -30,7 +30,7 @@ export const VideoOutput = ({ isLoading, prompt }: VideoOutputProps) => {
             MOCK_VIDEOS.map((video, i) => (
               <div
                 key={i}
-                className="group relative aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black/40 animate-fade-in-up flex flex-col justify-end"
+                className="group relative aspect-video rounded-3xl overflow-hidden border border-white/10 bg-black/40 animate-content-spring transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(139,92,246,0.15)] hover:border-white/30 hover:z-10 flex flex-col justify-end"
                 style={{ animationDelay: `${i * 100}ms` }}
               >
                 <video

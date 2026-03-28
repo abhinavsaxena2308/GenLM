@@ -31,7 +31,7 @@ export const AudioOutput = ({ isLoading, prompt }: AudioOutputProps) => {
             MOCK_AUDIOS.map((track, i) => (
               <div
                 key={i}
-                className="group w-full liquid-glass rounded-2xl p-4 flex items-center justify-between gap-4 animate-fade-in-up border border-white/10 hover:bg-white/10 transition-colors"
+                className="group w-full liquid-glass rounded-2xl p-4 flex items-center justify-between gap-4 animate-content-spring border border-white/10 hover:bg-white/10 hover:-translate-y-1 hover:shadow-[0_10px_30px_rgba(139,92,246,0.1)] transition-all duration-300 relative z-0 hover:z-10"
                 style={{ animationDelay: `${i * 100}ms` }}
               >
                 <div className="flex items-center gap-4 flex-1">

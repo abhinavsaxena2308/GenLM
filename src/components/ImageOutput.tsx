@@ -34,13 +34,13 @@ export const ImageOutput = ({ isLoading, prompt }: ImageOutputProps) => {
             MOCK_IMAGES.map((src, i) => (
               <div
                 key={i}
-                className="group relative aspect-square rounded-2xl overflow-hidden border border-white/10 bg-black/20 animate-fade-in-up"
+                className="group relative aspect-square rounded-2xl overflow-hidden border border-white/10 bg-black/20 animate-content-spring transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(139,92,246,0.15)] hover:border-white/20 hover:z-10"
                 style={{ animationDelay: `${i * 100}ms` }}
               >
                 <img
                   src={src}
                   alt={`Generated image ${i + 1}`}
-                  className="w-full h-full object-cover transition-transform duration-500 ease-out group-hover:scale-110"
+                  className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
                 />
                 
                 {/* Glassmorphism Overlay */}
