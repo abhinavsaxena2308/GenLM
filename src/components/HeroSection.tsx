@@ -64,9 +64,9 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background/70 pointer-events-none" />
 
       <div className="relative z-10">
-        <div className="flex flex-col items-center pt-10 md:pt-20 px-4">
+        <div className="flex flex-col items-center pt-28 md:pt-36 px-4">
           <h1
-            className="text-[80px] pt-16 sm:text-[140px] md:text-[180px] lg:text-[230px] font-normal leading-[1.02] tracking-[-0.024em] bg-clip-text text-transparent"
+            className="text-[80px] sm:text-[140px] md:text-[180px] lg:text-[230px] font-normal leading-[1.02] tracking-[-0.024em] bg-clip-text text-transparent animate-fade-in-up"
             style={{
               fontFamily: "'General Sans', sans-serif",
               backgroundImage: "linear-gradient(223deg, #E8E8E9 0%, #3A7BBF 104.15%)",
@@ -74,12 +74,12 @@ const HeroSection = () => {
           >
             GenIm.AI
           </h1>
-          <p className="text-hero-sub text-center text-base md:text-lg leading-7 md:leading-8 max-w-md mt-4 opacity-80 px-4">
+          <p className="text-hero-sub text-center text-base md:text-lg leading-7 md:leading-8 max-w-md mt-4 opacity-80 px-4 animate-fade-in-up-delay-1">
             The most powerful AI ever deployed
             <br />
             for your imagination
           </p>
-          <div className="mt-6 md:mt-8 mb-10 md:mb-[66px]">
+          <div className="mt-6 md:mt-8 mb-10 md:mb-[66px] animate-fade-in-up-delay-2 glow-hover rounded-full">
             <Button variant="heroSecondary" className="px-6 py-5 md:px-[29px] md:py-[24px]">
               Create Now
             </Button>
