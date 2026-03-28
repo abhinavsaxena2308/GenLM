@@ -78,8 +78,8 @@ const Generate = () => {
           {/* Prompt Input */}
           <div ref={wrapperRef} className="relative w-full">
             <div className={cn(
-              "liquid-glass rounded-2xl p-1.5 flex flex-col sm:flex-row gap-2 transition-all duration-500",
-              isGenerating ? "shadow-[0_0_80px_rgba(139,92,246,0.3)] scale-105 border-primary/50" : "shadow-lg shadow-black/20"
+              "liquid-glass rounded-2xl sm:rounded-[2rem] p-2 flex flex-col sm:flex-row gap-3 transition-all duration-500",
+              isGenerating ? "shadow-[0_0_80px_rgba(139,92,246,0.3)] scale-[1.02] border-primary/50" : "shadow-xl shadow-black/20"
             )}>
               <textarea
                 ref={textareaRef}
@@ -89,12 +89,12 @@ const Generate = () => {
                 onKeyDown={handleKeyDown}
                 rows={1}
                 placeholder="What will you create today?"
-                className="input-glow w-full bg-transparent resize-none rounded-xl px-5 py-4 text-lg text-foreground placeholder:text-foreground/40 focus:outline-none min-h-[64px]"
+                className="input-glow w-full bg-transparent resize-none rounded-xl sm:rounded-3xl px-6 py-4 text-lg text-foreground placeholder:text-foreground/40 focus:outline-none min-h-[64px]"
               />
               <button
                 onClick={handleGenerate}
                 disabled={!prompt.trim() || isGenerating}
-                className="btn-gradient-glow shrink-0 rounded-xl px-8 py-4 font-semibold text-white flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                className="btn-gradient-glow shrink-0 w-full sm:w-auto rounded-xl sm:rounded-full px-8 py-4 sm:py-0 font-semibold text-white flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-[1.02] sm:hover:scale-105 active:scale-95"
               >
                 {isGenerating ? (
                   <span className="flex items-center gap-1">

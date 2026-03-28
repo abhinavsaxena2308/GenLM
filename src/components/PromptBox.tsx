@@ -172,12 +172,12 @@ const PromptBox = () => {
         </div>
       )}
 
-      {/* Action buttons */}
-      <div className="flex flex-col sm:flex-row gap-3 justify-center mt-2">
+        {/* Action buttons */}
+      <div className="flex flex-col sm:flex-row gap-3 justify-center mt-4 w-full px-2 sm:px-0">
         <button 
           onClick={handleEnhance}
           disabled={!prompt.trim() || isEnhancing}
-          className="btn-gradient-glow flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-foreground/90 hover:text-foreground transition-all duration-250 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
+          className="btn-gradient-glow w-full sm:w-auto flex items-center justify-center gap-2 rounded-2xl sm:rounded-full px-6 py-3.5 text-sm font-semibold text-foreground/90 hover:text-foreground transition-all duration-250 hover:scale-[1.02] sm:hover:scale-105 active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
         >
           {isEnhancing ? <Loader2 className="w-4 h-4 animate-spin text-purple-400" /> : <Sparkles className="w-4 h-4 text-purple-400" />}
           {isEnhancing ? "Enhancing..." : "Enhance Prompt"}
@@ -185,7 +185,7 @@ const PromptBox = () => {
         <button 
           onClick={handleGenerateImage}
           disabled={!prompt.trim() || isGeneratingImage}
-          className="btn-gradient-glow flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-foreground/90 hover:text-foreground transition-all duration-250 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
+          className="btn-gradient-glow w-full sm:w-auto flex items-center justify-center gap-2 rounded-2xl sm:rounded-full px-6 py-3.5 text-sm font-semibold text-foreground/90 hover:text-foreground transition-all duration-250 hover:scale-[1.02] sm:hover:scale-105 active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
         >
           {isGeneratingImage ? <Loader2 className="w-4 h-4 animate-spin text-blue-400" /> : <ImageIcon className="w-4 h-4 text-blue-400" />}
           {isGeneratingImage ? "Generating..." : "Generate Image"}
@@ -193,7 +193,7 @@ const PromptBox = () => {
         <button 
           onClick={handleGenerateAudio}
           disabled={!prompt.trim() || isGeneratingAudio}
-          className="btn-gradient-glow flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-foreground/90 hover:text-foreground transition-all duration-250 hover:scale-105 active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
+          className="btn-gradient-glow w-full sm:w-auto flex items-center justify-center gap-2 rounded-2xl sm:rounded-full px-6 py-3.5 text-sm font-semibold text-foreground/90 hover:text-foreground transition-all duration-250 hover:scale-[1.02] sm:hover:scale-105 active:scale-95 disabled:opacity-50 disabled:pointer-events-none"
         >
           {isGeneratingAudio ? <Loader2 className="w-4 h-4 animate-spin text-pink-400" /> : <Music className="w-4 h-4 text-pink-400" />}
           Generate Audio
@@ -204,8 +204,8 @@ const PromptBox = () => {
       {(imageUrl || audioUrl) && (
         <div className="mt-8 flex flex-col gap-6 items-center w-full animate-fade-in-up">
           {imageUrl && (
-            <div className="relative group rounded-2xl overflow-hidden border border-white/10 shadow-2xl max-w-lg w-full bg-black/40">
-              <img src={imageUrl} alt={prompt} className="w-full h-auto object-cover max-h-[600px] transition-transform duration-700 group-hover:scale-105" />
+            <div className="relative group rounded-3xl overflow-hidden border border-white/10 shadow-2xl max-w-lg w-full bg-black/40">
+              <img src={imageUrl} alt={prompt} loading="lazy" decoding="async" className="w-full h-auto object-cover max-h-[600px] transition-transform duration-700 group-hover:scale-105" />
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 backdrop-blur-[2px] flex items-center justify-center gap-4">
                 <a href={imageUrl} target="_blank" rel="noreferrer" className="w-12 h-12 rounded-full liquid-glass flex items-center justify-center text-white hover:scale-110 transition-transform hover:bg-white/20">
                   <Download className="w-5 h-5" />

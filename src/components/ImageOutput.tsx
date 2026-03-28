@@ -40,6 +40,8 @@ export const ImageOutput = ({ isLoading, prompt }: ImageOutputProps) => {
                 <img
                   src={src}
                   alt={`Generated image ${i + 1}`}
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transition-transform duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-110"
                 />
                 
