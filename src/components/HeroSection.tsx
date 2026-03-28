@@ -55,7 +55,7 @@ const HeroSection = () => {
         autoPlay
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover mt-48"
+        className="absolute inset-0 w-full h-full object-cover md:mt-48"
         style={{ opacity: 0 }}
       >
         <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260308_114720_3dabeb9e-2c39-4907-b747-bc3544e2d5b7.mp4" type="video/mp4" />
@@ -77,7 +77,7 @@ const HeroSection = () => {
           <p className="text-hero-sub text-center text-base md:text-lg leading-7 md:leading-8 max-w-md mt-4 opacity-80 px-4">
             The most powerful AI ever deployed
             <br />
-            in talent acquisition
+            for your imagination
           </p>
           <div className="mt-6 md:mt-8 mb-10 md:mb-[66px]">
             <Button variant="heroSecondary" className="px-6 py-5 md:px-[29px] md:py-[24px]">
