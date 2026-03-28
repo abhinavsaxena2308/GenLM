@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import Navbar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -80,8 +81,8 @@ const HeroSection = () => {
             for your imagination
           </p>
           <div className="mt-6 md:mt-8 mb-10 md:mb-[66px] animate-fade-in-up-delay-2 glow-hover rounded-full">
-            <Button variant="heroSecondary" className="px-6 py-5 md:px-[29px] md:py-[24px]">
-              Create Now
+            <Button variant="heroSecondary" className="px-6 py-5 md:px-[29px] md:py-[24px]" asChild>
+              <Link to="/generate">Create Now</Link>
             </Button>
           </div>
         </div>

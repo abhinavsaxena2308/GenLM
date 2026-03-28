@@ -147,4 +147,15 @@
     pointer-events: none;
     opacity: 0.06;
   }
+
+  /* ── Shimmer loading effect ── */
+  .shimmer-effect {
+    animation: shimmer 2s infinite linear;
+    background-size: 200% 100%;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
 }

@@ -1,4 +1,5 @@
 import logo from "@/assets/logo.png";
+import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import {
@@ -33,15 +34,25 @@ const Navbar = () => {
             variant="heroSecondary"
             size="sm"
             className="rounded-full px-5 py-1.5 mr-2 text-sm glow-hover"
+            asChild
           >
-            Sign In
+            <Link to="/generate">Generate</Link>
+          </Button>
+          <Button
+            variant="heroSecondary"
+            size="sm"
+            className="rounded-full px-5 py-1.5 mr-2 text-sm glow-hover"
+            asChild
+          >
+            <Link to="/generate">Sign In</Link>
           </Button>
           <Button
             variant="heroSecondary"
             size="sm"
             className="rounded-full px-5 py-1.5 text-sm glow-hover"
+            asChild
           >
-            Sign Up
+            <Link to="/generate">Sign Up</Link>
           </Button>
         </div>
 
@@ -58,8 +69,11 @@ const Navbar = () => {
                 <SheetTitle className="text-foreground">Menu</SheetTitle>
               </SheetHeader>
               <div className="flex flex-col gap-4 mt-8">
-                <Button variant="heroSecondary" className="w-full rounded-full glow-hover">
-                  Sign Up
+                <Button variant="heroSecondary" className="w-full rounded-full glow-hover" asChild>
+                  <Link to="/generate">Generate</Link>
+                </Button>
+                <Button variant="heroSecondary" className="w-full rounded-full glow-hover" asChild>
+                  <Link to="/generate">Sign In</Link>
                 </Button>
               </div>
             </SheetContent>
