@@ -1,90 +1,44 @@
-import { useEffect, useRef } from "react";
-import Navbar from "@/components/Navbar";
-import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    const video = videoRef.current;
-    if (!video) return;
-
-    let raf: number;
-
-    const tick = () => {
-      if (!video.duration) {
-        raf = requestAnimationFrame(tick);
-        return;
-      }
-      const t = video.currentTime;
-      const d = video.duration;
-      const fadeTime = 0.5;
-
-      if (t < fadeTime) {
-        video.style.opacity = String(t / fadeTime);
-      } else if (t > d - fadeTime) {
-        video.style.opacity = String((d - t) / fadeTime);
-      } else {
-        video.style.opacity = "1";
-      }
-
-      raf = requestAnimationFrame(tick);
-    };
-
-    const onEnded = () => {
-      video.style.opacity = "0";
-      setTimeout(() => {
-        video.currentTime = 0;
-        video.play();
-      }, 100);
-    };
-
-    video.addEventListener("ended", onEnded);
-    raf = requestAnimationFrame(tick);
-
-    return () => {
-      cancelAnimationFrame(raf);
-      video.removeEventListener("ended", onEnded);
-    };
-  }, []);
-
   return (
-    <section className="bg-background relative overflow-hidden min-h-screen">
+    <section className="relative w-full min-h-screen flex flex-col items-center justify-center text-center overflow-hidden bg-background">
+      {/* Cinematic Fullscreen Video */}
       <video
-        ref={videoRef}
         autoPlay
+        loop
         muted
         playsInline
-        className="absolute inset-0 w-full h-full object-cover md:mt-48"
-        style={{ opacity: 0 }}
+        className="absolute inset-0 w-full h-full object-cover z-0"
       >
-        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260308_114720_3dabeb9e-2c39-4907-b747-bc3544e2d5b7.mp4" type="video/mp4" />
+        <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260314_131748_f2ca2a28-fed7-44c8-b9a9-bd9acdd5ec31.mp4" type="video/mp4" />
       </video>
 
-      <div className="absolute inset-0 bg-gradient-to-b from-background/70 via-background/40 to-background/70 pointer-events-none" />
+      {/* Main Content */}
+      <div className="relative z-10 flex flex-col items-center justify-center px-6 pt-32 pb-40 w-full max-w-7xl mx-auto h-full flex-1">
+        
+        {/* Cinematic Heading */}
+        <h1 
+          className="text-5xl sm:text-7xl md:text-[140px] leading-[0.95] tracking-[-2.46px] max-w-7xl font-normal text-white animate-fade-rise drop-shadow-2xl"
+          style={{ fontFamily: "'Instrument Serif', serif" }}
+        >
+          GenIm.AI
+        </h1>
 
-      <div className="relative z-10">
-        <div className="flex flex-col items-center pt-28 md:pt-36 px-4">
-          <h1
-            className="text-[80px] sm:text-[140px] md:text-[180px] lg:text-[230px] font-normal leading-[1.02] tracking-[-0.024em] bg-clip-text text-transparent animate-fade-in-up"
-            style={{
-              fontFamily: "'General Sans', sans-serif",
-              backgroundImage: "linear-gradient(223deg, #E8E8E9 0%, #3A7BBF 104.15%)",
-            }}
+        {/* Cinematic Subtext */}
+        <p className="text-muted-foreground text-base sm:text-2xl max-w-2xl mt-8 leading-relaxed animate-fade-rise-delay">
+          The most powerful AI ever deployed. <br/>
+          Where dreams rise through the silence.
+        </p>
+
+        {/* Liquid Glass CTA */}
+        <div className="mt-12 animate-fade-rise-delay-2">
+          <Link
+            to="/generate"
+            className="liquid-glass rounded-full px-14 py-5 text-base sm:text-lg text-foreground hover:scale-[1.03] transition-transform duration-300 inline-block pointer-events-auto"
           >
-            GenIm.AI
-          </h1>
-          <p className="text-hero-sub text-center text-base md:text-lg leading-7 md:leading-8 max-w-md mt-4 opacity-80 px-4 animate-fade-in-up-delay-1">
-            The most powerful AI ever deployed
-            <br />
-            for your imagination
-          </p>
-          <div className="mt-6 md:mt-8 mb-10 md:mb-[66px] animate-fade-in-up-delay-2 glow-hover rounded-full">
-            <Button variant="heroSecondary" className="px-6 py-5 md:px-[29px] md:py-[24px]" asChild>
-              <Link to="/generate">Create Now</Link>
-            </Button>
-          </div>
+            Create Now
+          </Link>
         </div>
       </div>
     </section>
