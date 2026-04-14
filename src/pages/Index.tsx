@@ -1,5 +1,4 @@
 import HeroSection from "@/components/HeroSection";
-import AISection from "@/components/AISection";
 import Navbar from "@/components/Navbar";
 
 const Index = () => {
@@ -7,7 +6,6 @@ const Index = () => {
     <>
       <Navbar />
       <HeroSection />
-      <AISection />
     </>
   );
 };

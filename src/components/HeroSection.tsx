@@ -16,9 +16,9 @@ const HeroSection = () => {
 
       {/* Main Content */}
       <div className="relative z-10 flex flex-col items-center justify-center px-6 pt-32 pb-40 w-full max-w-7xl mx-auto h-full flex-1">
-        
+
         {/* Cinematic Heading */}
-        <h1 
+        <h1
           className="text-5xl sm:text-7xl md:text-[140px] leading-[0.95] tracking-[-2.46px] max-w-7xl font-normal text-white animate-fade-rise drop-shadow-2xl"
           style={{ fontFamily: "'Instrument Serif', serif" }}
         >
@@ -27,19 +27,9 @@ const HeroSection = () => {
 
         {/* Cinematic Subtext */}
         <p className="text-muted-foreground text-base sm:text-2xl max-w-2xl mt-8 leading-relaxed animate-fade-rise-delay">
-          The most powerful AI ever deployed. <br/>
+          The most powerful AI ever deployed. <br />
           Where dreams rise through the silence.
         </p>
-
-        {/* Liquid Glass CTA */}
-        <div className="mt-12 animate-fade-rise-delay-2">
-          <Link
-            to="/generate"
-            className="liquid-glass rounded-full px-14 py-5 text-base sm:text-lg text-foreground hover:scale-[1.03] transition-transform duration-300 inline-block pointer-events-auto"
-          >
-            Create Now
-          </Link>
-        </div>
       </div>
     </section>
   );
